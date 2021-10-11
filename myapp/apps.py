@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+import redis
 
 
 class MyappConfig(AppConfig):
@@ -7,3 +8,4 @@ class MyappConfig(AppConfig):
 
     def ready(self):
         import myapp.signals
+
