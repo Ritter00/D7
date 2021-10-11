@@ -11,6 +11,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.http import HttpResponse
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
+from .tasks import text
 
 
 class PostList(ListView):
@@ -149,3 +150,6 @@ def subscriber(request, pk):
         return redirect(request.META.get('HTTP_REFERER'))
 
 
+def index(request):
+    text.delay()
+    return render(request, 'index.html')
