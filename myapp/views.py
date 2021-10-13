@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.http import HttpResponse
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
-from .tasks import text
+from .tasks import send_mail
 
 
 class PostList(ListView):
@@ -85,6 +85,8 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
 
     def form_valid(self, form): # для сигнала, сохраняем обьект дважды, дважды сиганалит
         self.object = form.save()
+        pk = self.object.id
+        send_mail.delay(pk)  # вызываем таск
         return super().form_valid(form)
 
 
@@ -150,6 +152,3 @@ def subscriber(request, pk):
         return redirect(request.META.get('HTTP_REFERER'))
 
 
-def index(request):
-    text.delay()
-    return render(request, 'index.html')
