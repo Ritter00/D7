@@ -96,7 +96,7 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
     def form_valid(self, form): # для сигнала, сохраняем обьект дважды, дважды сиганалит
         self.object = form.save()
         pk = self.object.id
-        send_mail.delay(pk)  # вызываем таск
+        #send_mail.delay(pk)  # вызываем таск
         return super().form_valid(form)
 
 
