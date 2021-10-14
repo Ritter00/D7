@@ -12,6 +12,7 @@ from django.http import HttpResponse
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .tasks import send_mail
+from django.core.cache import cache
 
 
 class PostList(ListView):
@@ -51,6 +52,15 @@ class PostDetail(DetailView):
         de = kwargs['object'].postCategory
         context['pop'] = de.all().last().subscribers.all()
         return context
+
+    def get_object(self, *args, **kwargs):  # переопределяем метод получения объекта, как ни странно
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)  # кэш очень похож на словарь, и метод get действует также. Он забирает значение по ключу, если его нет, то забирает None.
+        #  если объекта нет в кэше, то получаем его и записываем в кэш
+        if not obj:
+            obj = super().get_object(*args, **kwargs)
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+
+        return obj
 
 
 class PostListSearch(ListView, ):

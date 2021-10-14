@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User, Group
 from django.db.models import  Sum
 from allauth.account.forms import SignupForm
+from django.core.cache import cache
 
 class Author(models.Model):
     authorUser = models.OneToOneField(User, on_delete= models.CASCADE)
@@ -73,6 +74,11 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return f'http://127.0.0.1:8000/news/{self.id}' # добавим абсолютный путь, чтобы после создания нас перебрасывало на страницу с товаром
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # сначала вызываем метод родителя, чтобы объект сохранился
+        cache.delete(f'post-{self.pk}') # затем удаляем его из кэша, чтобы сбросить его
+
 
 
 

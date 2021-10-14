@@ -6,7 +6,7 @@ from django.views.decorators.cache import cache_page
 
 urlpatterns = [
     path('',cache_page(60)(PostList.as_view())),
-    path('<int:pk>',cache_page(60*5)(PostDetail.as_view()), name='post_detail'),
+    path('<int:pk>',PostDetail.as_view(), name='post_detail'),
     path('search/', PostListSearch.as_view()),
     path('create/', PostCreateView.as_view(), name='post_create'),
     path('create/<int:pk>', PostUpdateView.as_view(),name='post_update' ),
