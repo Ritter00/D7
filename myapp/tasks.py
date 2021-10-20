@@ -3,26 +3,27 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .models import Post, Category, PostCategory
 from datetime import datetime, timedelta
+import time
 
 
 @shared_task
-def send_mail(pk):
-    post = Post.objects.get(id=pk)
-    category = post.postCategory.all().last()
-    mail = []
-    for subscriber in category.subscribers.all():
-        mail.append(subscriber.email)
+def send_mail(pk, post, cate, url):
+    mail = pk
+    print(f'{mail} - пост, {post} - post, {url} ')
     html_content = render_to_string('new_post.html',
-                                                {'new_post': post,
-                                                 'cat': category
-                                                 },
-                                                )  # получаем наш html
+                                    {
+                                        'new_post': post,
+                                        'ur': url
+
+                                    },
+                                    )
+    # получаем наш html
     msg = EmailMultiAlternatives(
-                    subject=f'Новый пост в разделе {category}',
-                    body=instance.title,
-                    from_email='oOo.example@yandex.ru',
-                    to=mail,
-                )
+        subject=f'Кое-что новенькое в разделе {cate}',
+        body='Текст',
+        from_email='oOo.example@yandex.ru',
+        to=mail,
+    )
     msg.attach_alternative(html_content, 'text/html')  # добавляем html
     msg.send()
 

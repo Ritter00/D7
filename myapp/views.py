@@ -88,16 +88,26 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
     permission_required = ('myapp.add_post',)
     form_class = PostForm
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['is_not_authors'] = not self.request.user.groups.filter(name='authors').exists()
         return context
 
-    def form_valid(self, form): # для сигнала, сохраняем обьект дважды, дважды сиганалит
+    def form_valid(self, form):  # для сигнала, сохраняем обьект дважды, дважды сиганалит
         self.object = form.save()
-        pk = self.object.id
-        #send_mail.delay(pk)  # вызываем таск
+        pk = self.request.POST['postCategory']
+        url = f'{self.object.get_absolute_url()}'
+        cat = Category.objects.get(id=pk).subscribers.all()
+        mail = []
+        post = f'{self.object.text}'
+        cate= f'{Category.objects.get(id=pk).category}'
+        for subscriber in cat:
+            mail.append(subscriber.email)
+        send_mail.delay(mail, post, cate, url)  # вызываем таск
         return super().form_valid(form)
+
+
 
 
 class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
