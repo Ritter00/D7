@@ -1,0 +1,128 @@
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:05:05,036
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts1.html, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84985 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:05:05,057
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:09:19,788
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts1.html, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84982 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:09:19,813
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:15:50,910
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts.html1, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84984 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:15:50,916
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:17:16,095
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts.html1, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84984 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:17:16,099
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:19:23,029
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts.html1, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84985 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:19:23,062
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:20:38,529
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts.html1, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84984 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:20:38,534
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:22:13,649
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts1.html, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84984 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:22:13,655
+ERROR Internal Server Error: /news/ C:\Program Files\python\lib\site-packages\django\utils\log.py 2021-11-16 16:23:43,414
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: posts3.html, myapp/post_list.html
+ERROR "GET /news/ HTTP/1.1" 500 84984 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py 2021-11-16 16:23:43,420

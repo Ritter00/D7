@@ -13,6 +13,11 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .tasks import send_mail
 from django.core.cache import cache
+import logging
+
+
+logger = logging.getLogger(__name__)  #  регистрация логгирования
+
 
 
 class PostList(ListView):
@@ -20,7 +25,7 @@ class PostList(ListView):
     template_name = 'posts.html'
     context_object_name = 'posts'
     queryset = Post.objects.order_by('-id')  # сортируем, еще можно через ordering = ['-id']
-    paginate_by = 7  # поставим постраничный вывод в n-элемент
+    paginate_by = 5  # поставим постраничный вывод в n-элемент
     form_class = PostForm
 
     def get_context_data(self, **kwargs):
@@ -46,6 +51,7 @@ class PostDetail(DetailView):
     # context_object_name = 'post'
     template_name = 'post_detail.html'
     queryset = Post.objects.all()
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -104,7 +110,7 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
         cate= f'{Category.objects.get(id=pk).category}'
         for subscriber in cat:
             mail.append(subscriber.email)
-        send_mail.delay(mail, post, cate, url)  # вызываем таск
+        #send_mail.delay(mail, post, cate, url)  # вызываем таск
         return super().form_valid(form)
 
 
