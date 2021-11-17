@@ -110,7 +110,7 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
         cate= f'{Category.objects.get(id=pk).category}'
         for subscriber in cat:
             mail.append(subscriber.email)
-        #send_mail.delay(mail, post, cate, url)  # вызываем таск
+        send_mail.delay(mail, post, cate, url)  # вызываем таск
         return super().form_valid(form)
 
 
